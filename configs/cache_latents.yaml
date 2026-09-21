@@ -1,0 +1,16 @@
+data:
+  data_dir: data/sqg256/train
+model:
+  in_channels: 2
+  latent_channels: 32
+  hid_channels: [64, 128, 256, 384, 512]
+  hid_blocks: [3, 3, 3, 2, 2]
+  spatial: 2
+  periodic: true
+  saturation: softclip2
+  latent_noise: 0.0
+  dropout: 0.05
+output:
+  cache_dir: cache/sqg256/train
+batch_size: 8
+device: cuda

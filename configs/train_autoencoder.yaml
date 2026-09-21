@@ -1,0 +1,41 @@
+data:
+  train_dir: data/sqg256/train
+  valid_dir: data/sqg256/valid
+  test_dir: data/sqg256/test
+  normalize: false
+  augment: [random_axis_flip, random_axis_permute, random_axis_roll]
+model:
+  in_channels: 2
+  latent_channels: 32
+  hid_channels: [64, 128, 256, 384, 512]
+  hid_blocks: [3, 3, 3, 2, 2]
+  saturation: softclip2
+  latent_noise: 0.0
+  spatial: 2
+  periodic: true
+  dropout: 0.05
+loss:
+  types: [vmse]
+  weights: [1.0]
+training:
+  batch_size: 128
+  valid_batch_size: 128
+  epochs: 500
+  lr: 0.0001
+  num_workers: 8
+  pin_memory: true
+  persistent_workers: true
+  prefetch_factor: 4
+  grad_clip: 1.0
+  early_stopping_patience: 0
+  early_stopping_min_delta: 0.000001
+optim:
+  betas: [0.9, 0.999]
+  weight_decay: 0.0
+  warmup_epochs: 5
+  warmup_start_factor: 0.1
+  min_lr: 0.000001
+output:
+  save_dir: runs/autoencoder
+  save_every_epoch: 100
+device: cuda

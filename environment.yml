@@ -1,0 +1,15 @@
+name: sqg-generative-inverse
+channels:
+  - pytorch
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pytorch>=2.0
+  - numpy
+  - scipy
+  - pyyaml
+  - tqdm
+  - einops
+  - netcdf4
+  - matplotlib
+  - pip

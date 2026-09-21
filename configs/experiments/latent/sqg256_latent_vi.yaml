@@ -1,0 +1,53 @@
+seed: 42
+device: cuda
+inverse:
+  method: latent_vi
+ldm:
+  train_config: configs/train_latent_prior.yaml
+  checkpoint: checkpoints/latent_prior.pt
+ae:
+  config: configs/train_autoencoder.yaml
+  checkpoint: checkpoints/autoencoder.pt
+physical:
+  sigma_train: 2660.0
+  scale_factor: 0.0030612244897959184
+data:
+  test_dir: data/sqg256/test
+  test_index: 0
+  frame_index: 0
+  test_space: norm
+observation:
+  fixed_mask: true
+  shared_channel_mask: true
+  mask_seed: 42
+  noise_seed: 43
+  operator:
+    name: identity
+    gain: 1.0
+    noise_std: 1.0
+    sparsity: 0.05
+    compact_output: true
+vi:
+  epochs: 1
+  n_steps: 50
+  ts_min: 0.18
+  regularizer_weight: 0.5
+  likelihood_weight: 1.0
+  likelihood_steps: 15
+  early_stopping: 0.0001
+  spectral_bands: 4
+  history_stride: 1
+  optimizer:
+    name: SGD
+    kwargs:
+      lr: 1.0
+  optimizer_dataterm:
+    name: SGD
+    kwargs:
+      lr: 0.1
+output:
+  save_dir: outputs/latent_vi
+  run_name: sqg256_latent_vi
+  vis_vmin: -20.0
+  vis_vmax: 20.0
+  vis_cmap: jet

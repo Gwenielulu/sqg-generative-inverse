@@ -1,0 +1,40 @@
+seed: 42
+device: cuda
+data:
+  train_dir: data/sqg64/iid/train
+  num_workers: 4
+model:
+  image_size: 64
+  in_channels: 2
+  num_channels: 128
+  num_res_blocks: 3
+  learn_sigma: true
+  num_heads: 4
+  num_heads_upsample: -1
+  num_head_channels: -1
+  attention_resolutions: "16,8"
+  channel_mult: ""
+  dropout: 0.0
+  class_cond: false
+  use_checkpoint: false
+  use_scale_shift_norm: true
+  resblock_updown: false
+  use_new_attention_order: false
+  diffusion_steps: 1000
+  noise_schedule: cosine
+  timestep_respacing: ""
+  use_kl: false
+  predict_xstart: false
+  rescale_timesteps: false
+  rescale_learned_sigmas: false
+training:
+  batch_size: 128
+  learning_rate: 0.0001
+  weight_decay: 0.0
+  steps: 70000
+  warmup_steps: 8000
+  ema_rate: 0.9999
+  log_every: 10
+  save_every: 5000
+output:
+  directory: runs/pixel_ddpm

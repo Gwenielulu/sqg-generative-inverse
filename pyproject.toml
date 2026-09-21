@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sqg-generative-inverse"
+version = "0.1.0"
+description = "Diffusion and latent generative priors for inverse reconstruction of SQG turbulence"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Lu Liu"}]
+dependencies = [
+  "numpy>=1.24",
+  "torch>=2.0",
+  "PyYAML>=6.0",
+  "tqdm>=4.65",
+  "einops>=0.7",
+  "netCDF4>=1.6",
+  "matplotlib>=3.7",
+  "scipy>=1.10",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7.4"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

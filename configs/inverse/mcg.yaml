@@ -1,0 +1,5 @@
+method: mcg
+clip_denoised: false
+scale: 1.0
+projection_alpha: 1.0
+progress: true

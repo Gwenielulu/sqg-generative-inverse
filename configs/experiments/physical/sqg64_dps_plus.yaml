@@ -1,0 +1,22 @@
+seed: 42
+device: cuda
+defaults:
+  model: configs/models/pixel_ddpm.yaml
+  inverse: configs/inverse/dps_plus.yaml
+data:
+  path: data/sqg64/iid/test/shard_00000.npy
+  sample_index: 0
+checkpoint:
+  path: checkpoints/pixel_ddpm.pt
+observation:
+  name: identity
+  noise_std: 0.05
+  sparsity: 0.10
+  fixed_mask: true
+  shared_channel_mask: true
+  mask_seed: 42
+  noise_seed: 43
+  compact_output: false
+output:
+  directory: outputs/sqg64_dps_plus
+

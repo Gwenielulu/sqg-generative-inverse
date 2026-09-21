@@ -1,0 +1,11 @@
+method: diffusion_optimal_control
+clip_denoised: false
+num_steps: 20
+num_iterations: 50
+learning_rate: 0.005
+weight_scale: 1.0
+k_jacobian: 1
+k_hessian: 1
+k_mf: 1
+use_projection: false
+verbose: 1

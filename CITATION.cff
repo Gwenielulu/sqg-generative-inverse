@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the repository and the relevant method papers."
+title: "SQG Generative Inverse"
+type: software
+authors:
+  - family-names: Liu
+    given-names: Lu
+year: 2026
+license: MIT
+

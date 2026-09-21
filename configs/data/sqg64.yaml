@@ -1,0 +1,6 @@
+resolution: 64
+channels: 2
+sigma_train: 2660.0
+train_dir: data/sqg64/iid/train
+test_path: data/sqg64/iid/test/shard_00000.npy
+

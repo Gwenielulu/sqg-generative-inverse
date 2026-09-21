@@ -1,0 +1,4 @@
+method: dps
+clip_denoised: false
+scale: 1.0
+progress: true

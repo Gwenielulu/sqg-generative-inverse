@@ -1,0 +1,7 @@
+resolution: 256
+channels: 2
+sigma_train: 2660.0
+train_dir: data/sqg256/train
+valid_dir: data/sqg256/valid
+test_dir: data/sqg256/test
+

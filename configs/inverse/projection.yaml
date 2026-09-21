@@ -1,0 +1,4 @@
+method: projection
+clip_denoised: false
+alpha: 1.0
+progress: true
