@@ -2,7 +2,7 @@
 
 Diffusion- and latent-prior methods for reconstructing sparsely observed, noisy two-channel surface quasi-geostrophic (SQG) turbulence.
 
-## Scope
+## Methods
 
 ### Pixel-space prior
 
@@ -126,6 +126,10 @@ python scripts/reconstruct.py \
 For physical-space experiments, change only the referenced inverse configuration to select `vanilla`, `projection`, `mcg`, `dps`, `dps_plus`, or `diffusion_optimal_control`. The program writes the truth, observations, mask, reconstruction, metrics, and resolved configuration to the selected output directory.
 
 ## Acknowledgments
+
+The SQG model and data-generation code are adapted from Jeffrey S. Whitaker's [`sqgturb`](https://github.com/jswhit/sqgturb) implementation. The dynamical formulation follows:
+
+- Ross Tulloch and K. Shafer Smith, “A Note on the Numerical Representation of Surface Dynamics in Quasigeostrophic Turbulence: Application to the Nonlinear Eady Model,” *Journal of the Atmospheric Sciences*, 66(4), 1063–1068, 2009. https://doi.org/10.1175/2008JAS2921.1
 
 This repository uses or adapts components from the following open-source projects:
 
